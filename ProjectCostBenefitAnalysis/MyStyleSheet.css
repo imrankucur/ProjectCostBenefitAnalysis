@@ -1,0 +1,57 @@
+﻿.Container {
+  margin-left: 30px;
+}
+
+.MyTextbox {
+    font-family: Poppins-Medium;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    display: block;
+    width: 80%;
+    background: #e6e6e6;
+    height: 40px;
+    border-radius: 25px;
+    padding: 0 30px 0 30px;
+}
+
+.MyMultiline {
+    font-family: Poppins-Medium;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    display: block;
+    width: 80%;
+    background: #e6e6e6;
+    height: 40px;
+    border-radius: 25px;
+    padding: 10px 30px 0 30px;
+}
+
+.MyWrap {
+    padding: 50px 15px 33px 15px;
+    background: #fff;
+    border-radius: 10px;
+    height: 800px;
+}
+.MyWrap2 {
+    background-color: azure;
+    opacity:0.7;
+    background: #fff;
+    border-radius: 10px;
+    height: 600px;
+}
+.MyButton {
+    background-color: red;
+}
+.MyGrid {
+    text-align: center !important;
+    height: 50px;
+    width:1000px;
+}
+.MyGridRow {
+    text-align: center !important;
+    width: 400px !important;
+    height: 50px;
+   
+}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectCostBenefitAnalysis", "ProjectCostBenefitAnalysis\ProjectCostBenefitAnalysis.csproj", "{FD976703-FE26-4843-9621-206602D055D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD976703-FE26-4843-9621-206602D055D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD976703-FE26-4843-9621-206602D055D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD976703-FE26-4843-9621-206602D055D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD976703-FE26-4843-9621-206602D055D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C96FB69-C712-4583-B12C-1080337577E5}
+	EndGlobalSection
+EndGlobal

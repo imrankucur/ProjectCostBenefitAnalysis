@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectCostBenefitAnalysisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ProjectCostBenefitAnalysisEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdminUsers" EntityType="ProjectCostBenefitAnalysisModel.AdminUsers" />
+    <EntitySet Name="Answers" EntityType="ProjectCostBenefitAnalysisModel.Answers" />
+    <EntitySet Name="BenefitsCategory" EntityType="ProjectCostBenefitAnalysisModel.BenefitsCategory" />
+    <EntitySet Name="BenefitsProfile" EntityType="ProjectCostBenefitAnalysisModel.BenefitsProfile" />
+    <EntitySet Name="CostCategory" EntityType="ProjectCostBenefitAnalysisModel.CostCategory" />
+    <EntitySet Name="CostProfile" EntityType="ProjectCostBenefitAnalysisModel.CostProfile" />
+    <EntitySet Name="ProjectDetails" EntityType="ProjectCostBenefitAnalysisModel.ProjectDetails" />
+    <EntitySet Name="ProjectGoals" EntityType="ProjectCostBenefitAnalysisModel.ProjectGoals" />
+    <EntitySet Name="Questions" EntityType="ProjectCostBenefitAnalysisModel.Questions" />
+    <EntitySet Name="StandartUsers" EntityType="ProjectCostBenefitAnalysisModel.StandartUsers" />
+    <EntitySet Name="sysdiagrams" EntityType="ProjectCostBenefitAnalysisModel.sysdiagrams" />
+    <AssociationSet Name="FK_Answers_ProjectDetails" Association="ProjectCostBenefitAnalysisModel.FK_Answers_ProjectDetails">
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+      <End Role="Answers" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Answers_Questions" Association="ProjectCostBenefitAnalysisModel.FK_Answers_Questions">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="Answers" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Answers_StandartUsers" Association="ProjectCostBenefitAnalysisModel.FK_Answers_StandartUsers">
+      <End Role="StandartUsers" EntitySet="StandartUsers" />
+      <End Role="Answers" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenefitsProfile_BenefitsCategory" Association="ProjectCostBenefitAnalysisModel.FK_BenefitsProfile_BenefitsCategory">
+      <End Role="BenefitsCategory" EntitySet="BenefitsCategory" />
+      <End Role="BenefitsProfile" EntitySet="BenefitsProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenefitsProfile_ProjectDetails" Association="ProjectCostBenefitAnalysisModel.FK_BenefitsProfile_ProjectDetails">
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+      <End Role="BenefitsProfile" EntitySet="BenefitsProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenefitsProfile_StandartUsers" Association="ProjectCostBenefitAnalysisModel.FK_BenefitsProfile_StandartUsers">
+      <End Role="StandartUsers" EntitySet="StandartUsers" />
+      <End Role="BenefitsProfile" EntitySet="BenefitsProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CostProfile_CostCategory" Association="ProjectCostBenefitAnalysisModel.FK_CostProfile_CostCategory">
+      <End Role="CostCategory" EntitySet="CostCategory" />
+      <End Role="CostProfile" EntitySet="CostProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CostProfile_ProjectDetails" Association="ProjectCostBenefitAnalysisModel.FK_CostProfile_ProjectDetails">
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+      <End Role="CostProfile" EntitySet="CostProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CostProfile_StandartUsers" Association="ProjectCostBenefitAnalysisModel.FK_CostProfile_StandartUsers">
+      <End Role="StandartUsers" EntitySet="StandartUsers" />
+      <End Role="CostProfile" EntitySet="CostProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectDetails_StandartUsers" Association="ProjectCostBenefitAnalysisModel.FK_ProjectDetails_StandartUsers">
+      <End Role="StandartUsers" EntitySet="StandartUsers" />
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AdminUsers">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdminUsername" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AdminPassword" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Answers">
+    <Key>
+      <PropertyRef Name="AnswersId" />
+    </Key>
+    <Property Name="AnswersId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ProjectId" Type="Int32" />
+    <Property Name="QuestionsId" Type="Int32" />
+    <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ProjectDetails" Relationship="ProjectCostBenefitAnalysisModel.FK_Answers_ProjectDetails" FromRole="Answers" ToRole="ProjectDetails" />
+    <NavigationProperty Name="Questions" Relationship="ProjectCostBenefitAnalysisModel.FK_Answers_Questions" FromRole="Answers" ToRole="Questions" />
+    <NavigationProperty Name="StandartUsers" Relationship="ProjectCostBenefitAnalysisModel.FK_Answers_StandartUsers" FromRole="Answers" ToRole="StandartUsers" />
+  </EntityType>
+  <EntityType Name="BenefitsCategory">
+    <Key>
+      <PropertyRef Name="BenefitsCategoryId" />
+    </Key>
+    <Property Name="BenefitsCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BenefitsCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BenefitsProfile" Relationship="ProjectCostBenefitAnalysisModel.FK_BenefitsProfile_BenefitsCategory" FromRole="BenefitsCategory" ToRole="BenefitsProfile" />
+  </EntityType>
+  <EntityType Name="BenefitsProfile">
+    <Key>
+      <PropertyRef Name="BenefitsProfileId" />
+    </Key>
+    <Property Name="BenefitsProfileId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ProjectId" Type="Int32" />
+    <Property Name="ProposedProduct" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateConducted" Type="DateTime" Precision="0" />
+    <Property Name="CompletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BenefitsCategoryId" Type="Int32" />
+    <Property Name="Year1" Type="Int32" />
+    <Property Name="Year2" Type="Int32" />
+    <Property Name="Year3" Type="Int32" />
+    <Property Name="Year4" Type="Int32" />
+    <Property Name="Year5" Type="Int32" />
+    <Property Name="Year6" Type="Int32" />
+    <Property Name="Year7" Type="Int32" />
+    <Property Name="Year8" Type="Int32" />
+    <Property Name="Year9" Type="Int32" />
+    <Property Name="Year10" Type="Int32" />
+    <NavigationProperty Name="BenefitsCategory" Relationship="ProjectCostBenefitAnalysisModel.FK_BenefitsProfile_BenefitsCategory" FromRole="BenefitsProfile" ToRole="BenefitsCategory" />
+    <NavigationProperty Name="ProjectDetails" Relationship="ProjectCostBenefitAnalysisModel.FK_BenefitsProfile_ProjectDetails" FromRole="BenefitsProfile" ToRole="ProjectDetails" />
+    <NavigationProperty Name="StandartUsers" Relationship="ProjectCostBenefitAnalysisModel.FK_BenefitsProfile_StandartUsers" FromRole="BenefitsProfile" ToRole="StandartUsers" />
+  </EntityType>
+  <EntityType Name="CostCategory">
+    <Key>
+      <PropertyRef Name="CostCategoryId" />
+    </Key>
+    <Property Name="CostCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CostCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CostProfile" Relationship="ProjectCostBenefitAnalysisModel.FK_CostProfile_CostCategory" FromRole="CostCategory" ToRole="CostProfile" />
+  </EntityType>
+  <EntityType Name="CostProfile">
+    <Key>
+      <PropertyRef Name="CostProfileId" />
+    </Key>
+    <Property Name="CostProfileId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ProjectId" Type="Int32" />
+    <Property Name="ProposedProduct" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateConducte" Type="DateTime" Precision="0" />
+    <Property Name="CompletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CostCategoryId" Type="Int32" />
+    <Property Name="OpexCapex" Type="Int32" />
+    <Property Name="Year1" Type="Int32" />
+    <Property Name="Year2" Type="Int32" />
+    <Property Name="Year3" Type="Int32" />
+    <Property Name="Year4" Type="Int32" />
+    <Property Name="Year5" Type="Int32" />
+    <Property Name="Year6" Type="Int32" />
+    <Property Name="Year7" Type="Int32" />
+    <Property Name="Year8" Type="Int32" />
+    <Property Name="Year9" Type="Int32" />
+    <Property Name="Year10" Type="Int32" />
+    <NavigationProperty Name="CostCategory" Relationship="ProjectCostBenefitAnalysisModel.FK_CostProfile_CostCategory" FromRole="CostProfile" ToRole="CostCategory" />
+    <NavigationProperty Name="ProjectDetails" Relationship="ProjectCostBenefitAnalysisModel.FK_CostProfile_ProjectDetails" FromRole="CostProfile" ToRole="ProjectDetails" />
+    <NavigationProperty Name="StandartUsers" Relationship="ProjectCostBenefitAnalysisModel.FK_CostProfile_StandartUsers" FromRole="CostProfile" ToRole="StandartUsers" />
+  </EntityType>
+  <EntityType Name="ProjectDetails">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ProjectName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectEstimatedStartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ProjectEstimatedCompletionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ProjectDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExpectedBenefits" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StakeholdersActors" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RelatedBusinessProcesses" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectGoal" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Answers" Relationship="ProjectCostBenefitAnalysisModel.FK_Answers_ProjectDetails" FromRole="ProjectDetails" ToRole="Answers" />
+    <NavigationProperty Name="BenefitsProfile" Relationship="ProjectCostBenefitAnalysisModel.FK_BenefitsProfile_ProjectDetails" FromRole="ProjectDetails" ToRole="BenefitsProfile" />
+    <NavigationProperty Name="CostProfile" Relationship="ProjectCostBenefitAnalysisModel.FK_CostProfile_ProjectDetails" FromRole="ProjectDetails" ToRole="CostProfile" />
+    <NavigationProperty Name="StandartUsers" Relationship="ProjectCostBenefitAnalysisModel.FK_ProjectDetails_StandartUsers" FromRole="ProjectDetails" ToRole="StandartUsers" />
+  </EntityType>
+  <EntityType Name="ProjectGoals">
+    <Key>
+      <PropertyRef Name="GoalId" />
+    </Key>
+    <Property Name="GoalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GoalNames" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GoalNumber" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Questions">
+    <Key>
+      <PropertyRef Name="QuestionsId" />
+    </Key>
+    <Property Name="QuestionsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="QuestionState" Type="Byte" />
+    <NavigationProperty Name="Answers" Relationship="ProjectCostBenefitAnalysisModel.FK_Answers_Questions" FromRole="Questions" ToRole="Answers" />
+  </EntityType>
+  <EntityType Name="StandartUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StandartUserUsername" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="StandartUserPassword" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Answers" Relationship="ProjectCostBenefitAnalysisModel.FK_Answers_StandartUsers" FromRole="StandartUsers" ToRole="Answers" />
+    <NavigationProperty Name="BenefitsProfile" Relationship="ProjectCostBenefitAnalysisModel.FK_BenefitsProfile_StandartUsers" FromRole="StandartUsers" ToRole="BenefitsProfile" />
+    <NavigationProperty Name="CostProfile" Relationship="ProjectCostBenefitAnalysisModel.FK_CostProfile_StandartUsers" FromRole="StandartUsers" ToRole="CostProfile" />
+    <NavigationProperty Name="ProjectDetails" Relationship="ProjectCostBenefitAnalysisModel.FK_ProjectDetails_StandartUsers" FromRole="StandartUsers" ToRole="ProjectDetails" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Answers_ProjectDetails">
+    <End Type="ProjectCostBenefitAnalysisModel.ProjectDetails" Role="ProjectDetails" Multiplicity="0..1" />
+    <End Type="ProjectCostBenefitAnalysisModel.Answers" Role="Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectDetails">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="Answers">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Answers_Questions">
+    <End Type="ProjectCostBenefitAnalysisModel.Questions" Role="Questions" Multiplicity="0..1" />
+    <End Type="ProjectCostBenefitAnalysisModel.Answers" Role="Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="QuestionsId" />
+      </Principal>
+      <Dependent Role="Answers">
+        <PropertyRef Name="QuestionsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Answers_StandartUsers">
+    <End Type="ProjectCostBenefitAnalysisModel.StandartUsers" Role="StandartUsers" Multiplicity="0..1" />
+    <End Type="ProjectCostBenefitAnalysisModel.Answers" Role="Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StandartUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Answers">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenefitsProfile_BenefitsCategory">
+    <End Type="ProjectCostBenefitAnalysisModel.BenefitsCategory" Role="BenefitsCategory" Multiplicity="0..1" />
+    <End Type="ProjectCostBenefitAnalysisModel.BenefitsProfile" Role="BenefitsProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenefitsCategory">
+        <PropertyRef Name="BenefitsCategoryId" />
+      </Principal>
+      <Dependent Role="BenefitsProfile">
+        <PropertyRef Name="BenefitsCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenefitsProfile_ProjectDetails">
+    <End Type="ProjectCostBenefitAnalysisModel.ProjectDetails" Role="ProjectDetails" Multiplicity="0..1" />
+    <End Type="ProjectCostBenefitAnalysisModel.BenefitsProfile" Role="BenefitsProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectDetails">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="BenefitsProfile">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenefitsProfile_StandartUsers">
+    <End Type="ProjectCostBenefitAnalysisModel.StandartUsers" Role="StandartUsers" Multiplicity="0..1" />
+    <End Type="ProjectCostBenefitAnalysisModel.BenefitsProfile" Role="BenefitsProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StandartUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BenefitsProfile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CostProfile_CostCategory">
+    <End Type="ProjectCostBenefitAnalysisModel.CostCategory" Role="CostCategory" Multiplicity="0..1" />
+    <End Type="ProjectCostBenefitAnalysisModel.CostProfile" Role="CostProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CostCategory">
+        <PropertyRef Name="CostCategoryId" />
+      </Principal>
+      <Dependent Role="CostProfile">
+        <PropertyRef Name="CostCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CostProfile_ProjectDetails">
+    <End Type="ProjectCostBenefitAnalysisModel.ProjectDetails" Role="ProjectDetails" Multiplicity="0..1" />
+    <End Type="ProjectCostBenefitAnalysisModel.CostProfile" Role="CostProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectDetails">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="CostProfile">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CostProfile_StandartUsers">
+    <End Type="ProjectCostBenefitAnalysisModel.StandartUsers" Role="StandartUsers" Multiplicity="0..1" />
+    <End Type="ProjectCostBenefitAnalysisModel.CostProfile" Role="CostProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StandartUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="CostProfile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectDetails_StandartUsers">
+    <End Type="ProjectCostBenefitAnalysisModel.StandartUsers" Role="StandartUsers" Multiplicity="0..1" />
+    <End Type="ProjectCostBenefitAnalysisModel.ProjectDetails" Role="ProjectDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StandartUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ProjectDetails">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

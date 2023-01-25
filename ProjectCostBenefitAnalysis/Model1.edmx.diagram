@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="13e9386e75604f0da3bcdf49a3e1a44d" Name="Diagram1">
+        <EntityTypeShape EntityType="ProjectCostBenefitAnalysisModel.AdminUsers" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProjectCostBenefitAnalysisModel.Answers" Width="1.5" PointX="5.25" PointY="12.375" />
+        <EntityTypeShape EntityType="ProjectCostBenefitAnalysisModel.BenefitsCategory" Width="1.5" PointX="3" PointY="17.875" />
+        <EntityTypeShape EntityType="ProjectCostBenefitAnalysisModel.BenefitsProfile" Width="1.5" PointX="5.25" PointY="16.25" />
+        <EntityTypeShape EntityType="ProjectCostBenefitAnalysisModel.CostCategory" Width="1.5" PointX="6" PointY="21.875" />
+        <EntityTypeShape EntityType="ProjectCostBenefitAnalysisModel.CostProfile" Width="1.5" PointX="8.25" PointY="16.125" />
+        <EntityTypeShape EntityType="ProjectCostBenefitAnalysisModel.ProjectDetails" Width="1.5" PointX="3" PointY="23.875" />
+        <EntityTypeShape EntityType="ProjectCostBenefitAnalysisModel.ProjectGoals" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ProjectCostBenefitAnalysisModel.Questions" Width="1.5" PointX="3" PointY="12.75" />
+        <EntityTypeShape EntityType="ProjectCostBenefitAnalysisModel.StandartUsers" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="ProjectCostBenefitAnalysisModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" />
+        <AssociationConnector Association="ProjectCostBenefitAnalysisModel.FK_Answers_ProjectDetails" />
+        <AssociationConnector Association="ProjectCostBenefitAnalysisModel.FK_Answers_Questions" />
+        <AssociationConnector Association="ProjectCostBenefitAnalysisModel.FK_Answers_StandartUsers" />
+        <AssociationConnector Association="ProjectCostBenefitAnalysisModel.FK_BenefitsProfile_BenefitsCategory" />
+        <AssociationConnector Association="ProjectCostBenefitAnalysisModel.FK_BenefitsProfile_ProjectDetails" />
+        <AssociationConnector Association="ProjectCostBenefitAnalysisModel.FK_BenefitsProfile_StandartUsers" />
+        <AssociationConnector Association="ProjectCostBenefitAnalysisModel.FK_CostProfile_CostCategory" />
+        <AssociationConnector Association="ProjectCostBenefitAnalysisModel.FK_CostProfile_ProjectDetails" />
+        <AssociationConnector Association="ProjectCostBenefitAnalysisModel.FK_CostProfile_StandartUsers" />
+        <AssociationConnector Association="ProjectCostBenefitAnalysisModel.FK_ProjectDetails_StandartUsers" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

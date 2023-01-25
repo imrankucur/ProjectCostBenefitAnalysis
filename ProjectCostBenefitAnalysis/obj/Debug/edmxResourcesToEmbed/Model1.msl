@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjectCostBenefitAnalysisModelStoreContainer" CdmEntityContainer="ProjectCostBenefitAnalysisEntities">
+    <EntitySetMapping Name="AdminUsers">
+      <EntityTypeMapping TypeName="ProjectCostBenefitAnalysisModel.AdminUsers">
+        <MappingFragment StoreEntitySet="AdminUsers">
+          <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+          <ScalarProperty Name="AdminUsername" ColumnName="AdminUsername" />
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Answers">
+      <EntityTypeMapping TypeName="ProjectCostBenefitAnalysisModel.Answers">
+        <MappingFragment StoreEntitySet="Answers">
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="QuestionsId" ColumnName="QuestionsId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="AnswersId" ColumnName="AnswersId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BenefitsCategory">
+      <EntityTypeMapping TypeName="ProjectCostBenefitAnalysisModel.BenefitsCategory">
+        <MappingFragment StoreEntitySet="BenefitsCategory">
+          <ScalarProperty Name="BenefitsCategoryName" ColumnName="BenefitsCategoryName" />
+          <ScalarProperty Name="BenefitsCategoryId" ColumnName="BenefitsCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BenefitsProfile">
+      <EntityTypeMapping TypeName="ProjectCostBenefitAnalysisModel.BenefitsProfile">
+        <MappingFragment StoreEntitySet="BenefitsProfile">
+          <ScalarProperty Name="Year10" ColumnName="Year10" />
+          <ScalarProperty Name="Year9" ColumnName="Year9" />
+          <ScalarProperty Name="Year8" ColumnName="Year8" />
+          <ScalarProperty Name="Year7" ColumnName="Year7" />
+          <ScalarProperty Name="Year6" ColumnName="Year6" />
+          <ScalarProperty Name="Year5" ColumnName="Year5" />
+          <ScalarProperty Name="Year4" ColumnName="Year4" />
+          <ScalarProperty Name="Year3" ColumnName="Year3" />
+          <ScalarProperty Name="Year2" ColumnName="Year2" />
+          <ScalarProperty Name="Year1" ColumnName="Year1" />
+          <ScalarProperty Name="BenefitsCategoryId" ColumnName="BenefitsCategoryId" />
+          <ScalarProperty Name="CompletedBy" ColumnName="CompletedBy" />
+          <ScalarProperty Name="DateConducted" ColumnName="DateConducted" />
+          <ScalarProperty Name="ProposedProduct" ColumnName="ProposedProduct" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="BenefitsProfileId" ColumnName="BenefitsProfileId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CostCategory">
+      <EntityTypeMapping TypeName="ProjectCostBenefitAnalysisModel.CostCategory">
+        <MappingFragment StoreEntitySet="CostCategory">
+          <ScalarProperty Name="CostCategoryName" ColumnName="CostCategoryName" />
+          <ScalarProperty Name="CostCategoryId" ColumnName="CostCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CostProfile">
+      <EntityTypeMapping TypeName="ProjectCostBenefitAnalysisModel.CostProfile">
+        <MappingFragment StoreEntitySet="CostProfile">
+          <ScalarProperty Name="Year10" ColumnName="Year10" />
+          <ScalarProperty Name="Year9" ColumnName="Year9" />
+          <ScalarProperty Name="Year8" ColumnName="Year8" />
+          <ScalarProperty Name="Year7" ColumnName="Year7" />
+          <ScalarProperty Name="Year6" ColumnName="Year6" />
+          <ScalarProperty Name="Year5" ColumnName="Year5" />
+          <ScalarProperty Name="Year4" ColumnName="Year4" />
+          <ScalarProperty Name="Year3" ColumnName="Year3" />
+          <ScalarProperty Name="Year2" ColumnName="Year2" />
+          <ScalarProperty Name="Year1" ColumnName="Year1" />
+          <ScalarProperty Name="OpexCapex" ColumnName="OpexCapex" />
+          <ScalarProperty Name="CostCategoryId" ColumnName="CostCategoryId" />
+          <ScalarProperty Name="CompletedBy" ColumnName="CompletedBy" />
+          <ScalarProperty Name="DateConducte" ColumnName="DateConducte" />
+          <ScalarProperty Name="ProposedProduct" ColumnName="ProposedProduct" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CostProfileId" ColumnName="CostProfileId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectDetails">
+      <EntityTypeMapping TypeName="ProjectCostBenefitAnalysisModel.ProjectDetails">
+        <MappingFragment StoreEntitySet="ProjectDetails">
+          <ScalarProperty Name="ProjectGoal" ColumnName="ProjectGoal" />
+          <ScalarProperty Name="RelatedBusinessProcesses" ColumnName="RelatedBusinessProcesses" />
+          <ScalarProperty Name="StakeholdersActors" ColumnName="StakeholdersActors" />
+          <ScalarProperty Name="ExpectedBenefits" ColumnName="ExpectedBenefits" />
+          <ScalarProperty Name="ProjectDescription" ColumnName="ProjectDescription" />
+          <ScalarProperty Name="ProjectEstimatedCompletionDate" ColumnName="ProjectEstimatedCompletionDate" />
+          <ScalarProperty Name="ProjectEstimatedStartDate" ColumnName="ProjectEstimatedStartDate" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectGoals">
+      <EntityTypeMapping TypeName="ProjectCostBenefitAnalysisModel.ProjectGoals">
+        <MappingFragment StoreEntitySet="ProjectGoals">
+          <ScalarProperty Name="GoalNumber" ColumnName="GoalNumber" />
+          <ScalarProperty Name="GoalNames" ColumnName="GoalNames" />
+          <ScalarProperty Name="GoalId" ColumnName="GoalId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="ProjectCostBenefitAnalysisModel.Questions">
+        <MappingFragment StoreEntitySet="Questions">
+          <ScalarProperty Name="QuestionState" ColumnName="QuestionState" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="QuestionsId" ColumnName="QuestionsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StandartUsers">
+      <EntityTypeMapping TypeName="ProjectCostBenefitAnalysisModel.StandartUsers">
+        <MappingFragment StoreEntitySet="StandartUsers">
+          <ScalarProperty Name="StandartUserPassword" ColumnName="StandartUserPassword" />
+          <ScalarProperty Name="StandartUserUsername" ColumnName="StandartUserUsername" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ProjectCostBenefitAnalysisModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

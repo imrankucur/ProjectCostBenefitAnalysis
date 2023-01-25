@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectCostBenefitAnalysisModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminUsers">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminUsername" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AdminPassword" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Answers">
+    <Key>
+      <PropertyRef Name="AnswersId" />
+    </Key>
+    <Property Name="AnswersId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ProjectId" Type="int" />
+    <Property Name="QuestionsId" Type="int" />
+    <Property Name="Answer" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="BenefitsCategory">
+    <Key>
+      <PropertyRef Name="BenefitsCategoryId" />
+    </Key>
+    <Property Name="BenefitsCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BenefitsCategoryName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BenefitsProfile">
+    <Key>
+      <PropertyRef Name="BenefitsProfileId" />
+    </Key>
+    <Property Name="BenefitsProfileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ProjectId" Type="int" />
+    <Property Name="ProposedProduct" Type="nvarchar(max)" />
+    <Property Name="DateConducted" Type="date" />
+    <Property Name="CompletedBy" Type="varchar" MaxLength="50" />
+    <Property Name="BenefitsCategoryId" Type="int" />
+    <Property Name="Year1" Type="int" />
+    <Property Name="Year2" Type="int" />
+    <Property Name="Year3" Type="int" />
+    <Property Name="Year4" Type="int" />
+    <Property Name="Year5" Type="int" />
+    <Property Name="Year6" Type="int" />
+    <Property Name="Year7" Type="int" />
+    <Property Name="Year8" Type="int" />
+    <Property Name="Year9" Type="int" />
+    <Property Name="Year10" Type="int" />
+  </EntityType>
+  <EntityType Name="CostCategory">
+    <Key>
+      <PropertyRef Name="CostCategoryId" />
+    </Key>
+    <Property Name="CostCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CostCategoryName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CostProfile">
+    <Key>
+      <PropertyRef Name="CostProfileId" />
+    </Key>
+    <Property Name="CostProfileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ProjectId" Type="int" />
+    <Property Name="ProposedProduct" Type="varchar" MaxLength="50" />
+    <Property Name="DateConducte" Type="date" />
+    <Property Name="CompletedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CostCategoryId" Type="int" />
+    <Property Name="OpexCapex" Type="int" />
+    <Property Name="Year1" Type="int" />
+    <Property Name="Year2" Type="int" />
+    <Property Name="Year3" Type="int" />
+    <Property Name="Year4" Type="int" />
+    <Property Name="Year5" Type="int" />
+    <Property Name="Year6" Type="int" />
+    <Property Name="Year7" Type="int" />
+    <Property Name="Year8" Type="int" />
+    <Property Name="Year9" Type="int" />
+    <Property Name="Year10" Type="int" />
+  </EntityType>
+  <EntityType Name="ProjectDetails">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ProjectName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProjectEstimatedStartDate" Type="date" Nullable="false" />
+    <Property Name="ProjectEstimatedCompletionDate" Type="date" Nullable="false" />
+    <Property Name="ProjectDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ExpectedBenefits" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StakeholdersActors" Type="nvarchar(max)" />
+    <Property Name="RelatedBusinessProcesses" Type="nvarchar(max)" />
+    <Property Name="ProjectGoal" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectGoals">
+    <Key>
+      <PropertyRef Name="GoalId" />
+    </Key>
+    <Property Name="GoalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoalNames" Type="varchar" MaxLength="50" />
+    <Property Name="GoalNumber" Type="int" />
+  </EntityType>
+  <EntityType Name="Questions">
+    <Key>
+      <PropertyRef Name="QuestionsId" />
+    </Key>
+    <Property Name="QuestionsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question" Type="varchar(max)" />
+    <Property Name="QuestionState" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="StandartUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StandartUserUsername" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="StandartUserPassword" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Answers_ProjectDetails">
+    <End Role="ProjectDetails" Type="Self.ProjectDetails" Multiplicity="0..1" />
+    <End Role="Answers" Type="Self.Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectDetails">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="Answers">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Answers_Questions">
+    <End Role="Questions" Type="Self.Questions" Multiplicity="0..1" />
+    <End Role="Answers" Type="Self.Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="QuestionsId" />
+      </Principal>
+      <Dependent Role="Answers">
+        <PropertyRef Name="QuestionsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Answers_StandartUsers">
+    <End Role="StandartUsers" Type="Self.StandartUsers" Multiplicity="0..1" />
+    <End Role="Answers" Type="Self.Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StandartUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Answers">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenefitsProfile_BenefitsCategory">
+    <End Role="BenefitsCategory" Type="Self.BenefitsCategory" Multiplicity="0..1" />
+    <End Role="BenefitsProfile" Type="Self.BenefitsProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenefitsCategory">
+        <PropertyRef Name="BenefitsCategoryId" />
+      </Principal>
+      <Dependent Role="BenefitsProfile">
+        <PropertyRef Name="BenefitsCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenefitsProfile_ProjectDetails">
+    <End Role="ProjectDetails" Type="Self.ProjectDetails" Multiplicity="0..1" />
+    <End Role="BenefitsProfile" Type="Self.BenefitsProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectDetails">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="BenefitsProfile">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenefitsProfile_StandartUsers">
+    <End Role="StandartUsers" Type="Self.StandartUsers" Multiplicity="0..1" />
+    <End Role="BenefitsProfile" Type="Self.BenefitsProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StandartUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BenefitsProfile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CostProfile_CostCategory">
+    <End Role="CostCategory" Type="Self.CostCategory" Multiplicity="0..1" />
+    <End Role="CostProfile" Type="Self.CostProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CostCategory">
+        <PropertyRef Name="CostCategoryId" />
+      </Principal>
+      <Dependent Role="CostProfile">
+        <PropertyRef Name="CostCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CostProfile_ProjectDetails">
+    <End Role="ProjectDetails" Type="Self.ProjectDetails" Multiplicity="0..1" />
+    <End Role="CostProfile" Type="Self.CostProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectDetails">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="CostProfile">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CostProfile_StandartUsers">
+    <End Role="StandartUsers" Type="Self.StandartUsers" Multiplicity="0..1" />
+    <End Role="CostProfile" Type="Self.CostProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StandartUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="CostProfile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectDetails_StandartUsers">
+    <End Role="StandartUsers" Type="Self.StandartUsers" Multiplicity="0..1" />
+    <End Role="ProjectDetails" Type="Self.ProjectDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StandartUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ProjectDetails">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProjectCostBenefitAnalysisModelStoreContainer">
+    <EntitySet Name="AdminUsers" EntityType="Self.AdminUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Answers" EntityType="Self.Answers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BenefitsCategory" EntityType="Self.BenefitsCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BenefitsProfile" EntityType="Self.BenefitsProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CostCategory" EntityType="Self.CostCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CostProfile" EntityType="Self.CostProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectDetails" EntityType="Self.ProjectDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectGoals" EntityType="Self.ProjectGoals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StandartUsers" EntityType="Self.StandartUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Answers_ProjectDetails" Association="Self.FK_Answers_ProjectDetails">
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+      <End Role="Answers" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Answers_Questions" Association="Self.FK_Answers_Questions">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="Answers" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Answers_StandartUsers" Association="Self.FK_Answers_StandartUsers">
+      <End Role="StandartUsers" EntitySet="StandartUsers" />
+      <End Role="Answers" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenefitsProfile_BenefitsCategory" Association="Self.FK_BenefitsProfile_BenefitsCategory">
+      <End Role="BenefitsCategory" EntitySet="BenefitsCategory" />
+      <End Role="BenefitsProfile" EntitySet="BenefitsProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenefitsProfile_ProjectDetails" Association="Self.FK_BenefitsProfile_ProjectDetails">
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+      <End Role="BenefitsProfile" EntitySet="BenefitsProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenefitsProfile_StandartUsers" Association="Self.FK_BenefitsProfile_StandartUsers">
+      <End Role="StandartUsers" EntitySet="StandartUsers" />
+      <End Role="BenefitsProfile" EntitySet="BenefitsProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CostProfile_CostCategory" Association="Self.FK_CostProfile_CostCategory">
+      <End Role="CostCategory" EntitySet="CostCategory" />
+      <End Role="CostProfile" EntitySet="CostProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CostProfile_ProjectDetails" Association="Self.FK_CostProfile_ProjectDetails">
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+      <End Role="CostProfile" EntitySet="CostProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CostProfile_StandartUsers" Association="Self.FK_CostProfile_StandartUsers">
+      <End Role="StandartUsers" EntitySet="StandartUsers" />
+      <End Role="CostProfile" EntitySet="CostProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectDetails_StandartUsers" Association="Self.FK_ProjectDetails_StandartUsers">
+      <End Role="StandartUsers" EntitySet="StandartUsers" />
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
